@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/3715e2b643.js" crossorigin="anonymous"></script>
+    <style>
+        .plusActive{
+            animation-name: pop;
+            animation-duration: 2s;
+            opacity: 0;
+        }
+        @keyframes pop{
+            0%{
+                scale:0;
+                opacity:100%
+            }
+            50%{
+                scale:1
+            }
+            100%{
+                scale:0
+            }
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div class="relative">
+        <i  id="plus" class="hidden plus text-9xl fa-solid fa-plus absolute text-white top-40 right-56"></i>
+        <i id="minus" class="hidden fa-solid fa-minus text-9xl text-white absolute top-40 left-56 "></i>
+        <div class="flex justify-center items-center h-[100vh] w-[100vw] m-auto">
+            <div class="wrapper lg:w-[50%] w-[90%] flex flex-col items-center gap-9 ">
+                <div class=""><h2 class="text-white text-3xl">Increment and Decrement</h2></div>
+                <div class="flex bg-white w-[70%] mx-auto py-4 rounded-xl">
+                    <button class="w-[30%]" onclick="decrement()">
+                        <i class="fa-solid fa-minus text-lg"></i></button>
+                    <div class="w-10 h-0.5 bg-slate-500 rotate-90 translate-y-4 rounded-md"></div>
+                    <div id="counter" class="text-2xl font-bold w-[30%] text-center" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" 
+                    unselectable="on"
+                    onselectstart="return false;" 
+                    onmousedown="return false;"> 0 </div>
+                    <div class="w-10 h-0.5 bg-slate-500 rotate-90 translate-y-4 rounded-md"></div>
+                    <button class="w-[30%] text-center" onclick="increment()"><i class="text-lg fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
